@@ -1,0 +1,252 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 400;
+  src: url("./fonts/poppins-400.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 500;
+  src: url("./fonts/poppins-500.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 600;
+  src: url("./fonts/poppins-600.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 700;
+  src: url("./fonts/poppins-700.ttf") format("truetype");
+}
+@font-face {
+  font-family: "AnimalesFantastic";
+  font-weight: 500;
+  src: url("./fonts/AnimalesFantastic.ttf") format("truetype");
+}
+
+@layer base {
+  *,
+  html,
+  body {
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+    cursor: url(./image/pointer.png), auto;
+  }
+  button[type="button"],
+  button[type="submit"] {
+    cursor: url(./image/pointer.png), auto;
+  }
+}
+
+@layer utilities {
+  /* Code for Footer */
+  .github {
+    width: 40px;
+    height: 40px;
+  }
+
+  .github:hover {
+    transform: scale(1.1);
+  }
+
+  .youtube {
+    width: 40px;
+    height: 28.1px;
+  }
+
+  .youtube:hover {
+    transform: scale(1.1);
+  }
+
+  .instagram {
+    width: 40px;
+    height: 40px;
+  }
+
+  .instagram:hover {
+    transform: scale(1.1);
+  }
+
+  .twitter {
+    width: 40px;
+    height: 32.5px;
+  }
+
+  .twitter:hover {
+    transform: scale(1.1);
+  }
+
+  .houses-intro {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  /* Code for HousesCards*/
+  input[type="radio"] {
+    display: none;
+  }
+
+  label img {
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+  }
+
+  input[type="radio"]:checked + label img {
+    opacity: 1;
+  }
+
+  input[type="radio"]:checked + label p {
+    bottom: 0;
+  }
+
+  .houses-intro:hover > .house {
+    opacity: 0.5;
+  }
+
+  .houses-intro:hover > .house:hover {
+    opacity: 1;
+  }
+
+  .house {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .house-choice {
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .select-house {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-style: italic;
+  }
+
+  label p {
+    font-style: italic;
+  }
+
+  .house p {
+    position: absolute;
+    bottom: -100%;
+    text-align: center;
+    color: rgb(255, 255, 253);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    transition: bottom 0.5s ease-in-out;
+  }
+
+  .house:hover p {
+    bottom: 0;
+  }
+
+  /* Code for LoginCard & RegisterCard */
+  .line-login-before::before,
+  .line-login-after::after {
+    content: "";
+    display: inline-block;
+    height: 1px;
+    width: 40px;
+    background-color: lightgray;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .line-login-before::before {
+    left: 0px;
+  }
+
+  .line-login-after::after {
+    right: 0px;
+  }
+
+  li {
+    position: relative;
+    padding: 0 6px;
+  }
+
+  .link:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom: 2px solid;
+    border-color: theme("colors.secondary");
+    display: block;
+    width: 100%;
+    height: 2px;
+    content: "";
+    transform: scale(0);
+    transition: transform 0.3s cubic-bezier(0.11, 0.7, 0, 1);
+  }
+
+  .link:hover:after {
+    transform: scale(1);
+  }
+
+  .is-active {
+    color: theme("colors.secondary");
+  }
+
+  /* Code for CardLibrary */
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    justify-content: center;
+    padding: 0 5rem;
+  }
+
+  /* Code for versus */
+  .potions button {
+    background-color: theme("colors.dark");
+    color: theme("colors.secondary");
+    padding: 8px 1rem;
+    border-radius: 20px;
+  }
+
+  .spells button {
+    background-color: theme("colors.dark");
+    color: theme("colors.secondary");
+    padding: 8px 1rem;
+    border-radius: 20px;
+  }
+
+  .potions button:hover {
+    box-shadow: 0px 0px 12px theme("colors.primary");
+  }
+
+  .spells button:hover {
+    box-shadow: 0px 0px 12px theme("colors.primary");
+  }
+
+  .abandon-btn button:hover {
+    box-shadow: 0px 0px 16px theme("colors.dark");
+  }
+
+  .divClass:focus {
+    outline: none !important;
+  }
+
+  .divClass:focus-within {
+    outline: none !important;
+  }
+
+  .audioIcons {
+    position: fixed;
+    font-size: 20px;
+    color: #fff4e2;
+    display: flex;
+    justify-content: flex-end;
+    left: 20px;
+    bottom: 10px;
+    opacity: 0.7;
+  }
+}
